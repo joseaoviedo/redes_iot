@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../static/main.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/2.18.9/mqtt.min.js" integrity="sha512-d5DS6XFeltUxnslGyFPDPDtRc5N8iNiUm+cK/a/nBdizDBpXbMcDR2qg4WYg823qIp8crzNIYlEuzu3++rZ7Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>Proyecto 1 | Redes</title>
+</head>
+<body>
+  <div id="main-conteiner">
+    <header>
+      <div id="top" class="banner">
+        <h1 class="Title"><img src="../static/logo.png" alt="logo">Proyecto IoT | Redes</h1>
+      </div>
+    </header>
+      <main>
+        <div class="content">
+            <div class="action">
+              <div class="actionform">
+                <h2>Temperatura</h2>
+                <br>
+                <input readonly id="temp-field">
+              </div>
+            <div class="action">
+              <div class="actionform">
+                <h2>Tweet</h2>
+                <br>
+                <textarea id="tweet-field" cols="30" rows="10"></textarea>
+                <button id="tweet-button">Realizar Tweet</button>
+              </div>
+            </div>
+        </div>
+      </main>
+  </div>
+</body>
+<script type="text/javascript" src="../static/webapp.js"></script>
+</html>
