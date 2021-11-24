@@ -1,0 +1,137 @@
+[
+    {
+        "id": "9c9d25c55c4c59f9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f7bd81988b61056d",
+        "type": "twitter-credentials",
+        "screen_name": "Alvar_64"
+    },
+    {
+        "id": "f2eef6d7f875d61a",
+        "type": "mqtt-broker",
+        "name": "Proyecto mqtt",
+        "broker": "3.23.129.128",
+        "port": "1883",
+        "clientid": "test",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "95c2eaf3dc7d9672",
+        "type": "mqtt in",
+        "z": "9c9d25c55c4c59f9",
+        "name": "",
+        "topic": "twitter",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f2eef6d7f875d61a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "d610b2d63674421a"
+            ]
+        ]
+    },
+    {
+        "id": "058ca17628b5ef97",
+        "type": "twitter out",
+        "z": "9c9d25c55c4c59f9",
+        "twitter": "f7bd81988b61056d",
+        "name": "Tweet",
+        "x": 750,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c8100aed76207a7c",
+        "type": "debug",
+        "z": "9c9d25c55c4c59f9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "d610b2d63674421a",
+        "type": "function",
+        "z": "9c9d25c55c4c59f9",
+        "name": "",
+        "func": "var newmsg = {payload: msg.payload.toString()};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 340,
+        "wires": [
+            [
+                "c8100aed76207a7c",
+                "058ca17628b5ef97"
+            ]
+        ]
+    },
+    {
+        "id": "10bd5a254b039d87",
+        "type": "inject",
+        "z": "9c9d25c55c4c59f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Test 123",
+        "payloadType": "str",
+        "x": 530,
+        "y": 520,
+        "wires": [
+            [
+                "058ca17628b5ef97"
+            ]
+        ]
+    }
+]
